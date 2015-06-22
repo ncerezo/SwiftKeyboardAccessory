@@ -5,7 +5,7 @@
 //  Created by Narciso Cerezo Jiménez on 11/5/15.
 //  Copyright (c) 2015 Narciso Cerezo. All rights reserved.
 //
-//  v0.1
+//  v0.1.1
 
 import Foundation
 
@@ -264,7 +264,7 @@ extension UIViewController {
     var toolbar = UIToolbar(frame: CGRectMake( 0, 0, self.view.frame.size.width, kToolbarHeight ) )
     toolbar.barStyle = .Default
     var items = [UIBarButtonItem]()
-    if self.sortedTextFields != nil {
+    if sortedTextFields?.count > 0 || sortedTextFieldsIndexPaths?.count > 0 {
       var previousButton:UIBarButtonItem!
       if self.prevButtonImageName != nil {
         previousButton = UIBarButtonItem(image: UIImage(named: self.prevButtonImageName!), style: .Plain, target: self, action: "goToPreviousField" )
